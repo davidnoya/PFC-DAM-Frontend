@@ -31,6 +31,12 @@
             android:name=".ui.RegistroActivity"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".ui.DashboardActivity"
+            android:exported="false">
+        </activity>
     </application>
+
 
 </manifest>

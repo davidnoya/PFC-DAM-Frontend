@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setOnMenuItemClickListener(item -> {
             int id = item.getItemId();
             if (id == R.id.menu_traslado) {
-                Toast.makeText(this, "Traslado de cuentas", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                startActivity(intent);
                 return true;
             } else if (id == R.id.menu_logout) {
                 mostrarPopupConfirmacionLogout();
