@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_salud"
+        android:title="Salud Financiera"
+        android:enabled="false" />
+
+    <item
+        android:id="@+id/menu_oficinas"
+        android:title="Oficinas y cajeros"
+        android:enabled="false" />
+
+    <item
+        android:id="@+id/menu_inversiones"
+        android:title="Tus inversiones"
+        android:enabled="false" />
+
+    <item
+        android:id="@+id/menu_traslado"
+        android:title="Traslado de Cuentas"
+        android:enabled="true" />
+
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Cerrar sesión"
+        android:enabled="true" />
+</menu>

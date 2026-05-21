@@ -3,7 +3,17 @@
     <style name="Base.Theme.TrasladoCuentas" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="popupMenuBackground">@drawable/menu</item>
     </style>
 
     <style name="Theme.TrasladoCuentas" parent="Base.Theme.TrasladoCuentas" />
+
+    <style name="temaMenu" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:popupBackground">@drawable/menu</item>
+        <item name="android:popupElevation">8dp</item>
+    </style>
+
+    <style name="negrita" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

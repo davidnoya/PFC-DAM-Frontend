@@ -9,10 +9,10 @@
     android:background="#F8F9FA">
 
     <ImageView
-        android:layout_width="295dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/abanca"
-        android:contentDescription="Logo de ABANCA" />
+        android:src="@drawable/dbanca"
+        android:contentDescription="Logo de dBANCA" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
