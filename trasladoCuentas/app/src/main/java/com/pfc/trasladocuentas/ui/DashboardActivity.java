@@ -58,7 +58,7 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void obtenerSolicitudes() {
+    public void obtenerSolicitudes() {
         String url = "http://10.0.2.2:8000/solicitudes/";
 
         JsonArrayRequestWithCustomAuth request = new JsonArrayRequestWithCustomAuth(
@@ -107,7 +107,13 @@ public class DashboardActivity extends AppCompatActivity {
                                 estado.setBackgroundColor(Color.parseColor("#FDEDEC"));
                             }
 
+                            vistaSolicitud.setOnClickListener(v -> {
+                                DesplegableDetalle df = DesplegableDetalle.newInstance(solicitud);
+                                df.show(getSupportFragmentManager(), "Detalle");
+                            });
+
                             contenedorSolicitudes.addView(vistaSolicitud);
+
                         }
 
                     } catch (JSONException e) {

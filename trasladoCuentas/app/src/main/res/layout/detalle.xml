@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/desplegable_detalle"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/referencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/principal"/>
+
+        <TextView
+            android:id="@+id/estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F8F9FA"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <include layout="@layout/item_detalle" android:id="@+id/lblEntidad" />
+            <include layout="@layout/item_detalle" android:id="@+id/lblIbanOri" />
+            <include layout="@layout/item_detalle" android:id="@+id/lblIbanDest" />
+            <include layout="@layout/item_detalle" android:id="@+id/lblFechaSol" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Fecha de ejecución:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEE"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:text="Peticiones a la Entidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/principal"/>
+
+        <CheckBox
+            android:id="@+id/petCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar órdenes" />
+
+        <CheckBox
+            android:id="@+id/petBloquear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bloquear entrantes" />
+
+        <CheckBox
+            android:id="@+id/petTransferirCierre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transferir saldo y cerrar" />
+
+        <CheckBox
+            android:id="@+id/petRecibirInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recibir info operaciones"
+            android:layout_marginBottom="24dp" />
+
+
+        <TextView
+            android:text="Actuaciones de Abanca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/principal"/>
+
+        <CheckBox
+            android:id="@+id/actHabilitar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Habilitar órdenes" />
+
+        <CheckBox
+            android:id="@+id/actAceptar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aceptar adeudos" />
+
+        <CheckBox
+            android:id="@+id/actInformar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informar emisores"
+            android:layout_marginBottom="32dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="GUARDAR"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/dbanca"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="ELIMINAR"
+            android:textColor="@color/white"
+            android:backgroundTint="#E74C3C" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDescargarPdf"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="DESCARGAR PDF"
+            android:textColor="@color/white"
+            android:backgroundTint="#317f43"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
