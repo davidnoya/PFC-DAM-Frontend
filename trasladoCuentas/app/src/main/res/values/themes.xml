@@ -16,4 +16,8 @@
     <style name="negrita" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="fondoIcono" parent="">
+        <item name="colorSecondaryContainer">@color/dbanca2</item>
+    </style>
 </resources>

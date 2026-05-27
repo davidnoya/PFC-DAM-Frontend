@@ -82,4 +82,12 @@ public class Paso2Fragment extends Fragment {
         ibanDestino.setError(null);
         return true;
     }
+
+    public String getIban() {
+        return ibanDestino.getText().toString().replaceAll(" ", "");
+    }
+    public String getFecha() {
+        String[] partes = fechaTraslado.getText().toString().split("/");
+        return partes[2] + "-" + partes[1] + "-" + partes[0];
+    }
 }

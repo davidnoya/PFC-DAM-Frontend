@@ -71,4 +71,11 @@ public class Paso1Fragment extends Fragment {
         ibanOrigen.setError(null);
         return true;
     }
+
+    public String getEntidad() {
+        return entidadOrigen.getText().toString();
+    }
+    public String getIban() {
+        return ibanOrigen.getText().toString().replaceAll(" ", "");
+    }
 }

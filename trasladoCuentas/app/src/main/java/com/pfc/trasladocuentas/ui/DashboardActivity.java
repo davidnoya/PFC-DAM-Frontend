@@ -39,6 +39,11 @@ public class DashboardActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         configurarToolbar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         obtenerSolicitudes();
     }
 

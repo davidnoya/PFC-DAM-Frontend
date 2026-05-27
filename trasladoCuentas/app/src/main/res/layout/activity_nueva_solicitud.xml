@@ -27,6 +27,7 @@
         android:background="@color/dbanca"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
+        android:theme="@style/fondoIcono"
         app:menu="@menu/menu_fragments" />
 
 </RelativeLayout>
