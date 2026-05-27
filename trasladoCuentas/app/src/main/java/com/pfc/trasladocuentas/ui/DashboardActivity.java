@@ -1,4 +1,5 @@
 package com.pfc.trasladocuentas.ui;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -51,7 +52,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.menu_nueva_solicitud) {
-                Toast.makeText(this, "Nueva solicitud", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DashboardActivity.this, NuevaSolicitudActivity.class);
+                startActivity(intent);
                 return true;
             }
             return false;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_paso1"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Origen" />
+    <item
+        android:id="@+id/nav_paso2"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="Destino" />
+    <item
+        android:id="@+id/nav_paso3"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Peticiones" />
+    <item
+        android:id="@+id/nav_paso4"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Actuaciones" />
+</menu>

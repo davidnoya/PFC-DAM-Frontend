@@ -36,6 +36,11 @@
             android:name=".ui.DashboardActivity"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".ui.NuevaSolicitudActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 
