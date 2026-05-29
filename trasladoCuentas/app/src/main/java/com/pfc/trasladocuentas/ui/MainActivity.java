@@ -172,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 },
                 error -> {
-                    android.widget.Toast.makeText(this, "Token de sesión no válido", android.widget.Toast.LENGTH_SHORT).show();
                     cerrarSesion();
                 },
                 this
@@ -203,7 +202,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cerrarSesion() {
+        SharedPreferences preferences = getSharedPreferences("SESSIONS_APP_PREFS", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("VALID_TOKEN");
+        editor.apply();
+
+        Toast.makeText(MainActivity.this, "Token de sesión no válido. Vuelve a iniciar sesión.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }

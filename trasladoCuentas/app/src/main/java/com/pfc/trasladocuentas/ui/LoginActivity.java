@@ -32,6 +32,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences preferences = getSharedPreferences("SESSIONS_APP_PREFS", Context.MODE_PRIVATE);
+        String token = preferences.getString("VALID_TOKEN", "");
+
+        if (!token.isEmpty()) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_login);
 
         dni = findViewById(R.id.dni);

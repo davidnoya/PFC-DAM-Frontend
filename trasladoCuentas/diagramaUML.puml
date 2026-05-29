@@ -1,0 +1,130 @@
+@startuml
+class com.pfc.trasladocuentas.ui.Paso3Fragment {
++ CheckBox chkCancelar
+- MaterialButton btnSiguiente
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+
+class com.pfc.trasladocuentas.ui.LoginActivity {
+- EditText dni
+- Button btnLogin
+- TextView textoRegistro
+- RequestQueue requestQueue
+# void onCreate(Bundle)
+- void hacerLogin()
+- void guardarToken(String)
+}
+
+
+class com.pfc.trasladocuentas.ui.Paso1Fragment {
+- AutoCompleteTextView entidadOrigen
+- TextInputEditText ibanOrigen
+- MaterialButton btnSiguiente
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void configurarDesplegable()
+- boolean validarCampos()
++ String getEntidad()
++ String getIban()
+}
+
+
+class com.pfc.trasladocuentas.ui.Paso2Fragment {
+- TextInputEditText ibanDestino
+- MaterialButton btnSiguiente
+- Calendar fechaSeleccionada
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void abrirCalendario()
+- boolean validarPaso2()
++ String getIban()
++ String getFecha()
+}
+
+
+class com.pfc.trasladocuentas.ui.MainActivity {
+- TextView saldoTotal
+- MaterialToolbar toolbar
+- RequestQueue requestQueue
+- LinearLayout contenedorCuentas
+# void onCreate(Bundle)
+- void setupToolbarMenu()
+- void obtenerResumen()
+- void mostrarPopupConfirmacionLogout()
+- void cerrarSesion()
+}
+
+
+class com.pfc.trasladocuentas.ui.DashboardActivity {
+- MaterialToolbar toolbar
+- LinearLayout contenedorSolicitudes
+- TextView mensajeVacio
+- RequestQueue requestQueue
+# void onCreate(Bundle)
+# void onResume()
+- void configurarToolbar()
++ void obtenerSolicitudes()
+}
+
+
+class com.pfc.trasladocuentas.ui.Paso4Fragment {
++ CheckBox chkHabilitar
+- MaterialButton btnFinalizar
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+
+class com.pfc.trasladocuentas.ui.RegistroActivity {
+- EditText nombre
+- Button btnCrearCuenta
+- TextView volverLogin
+- RequestQueue requestQueue
+# void onCreate(Bundle)
+- void hacerRegistro()
+}
+
+
+class com.pfc.trasladocuentas.ui.DesplegableDetalle {
+- String referencia
+- TextView fecha
+- CheckBox chkPetCancelar
++ {static} DesplegableDetalle newInstance(JSONObject)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void cargarDatosReales(String,String,View)
+- void desactivarCheckBoxes()
+- void enviarCambios(int)
+- JSONObject construirJson()
+- void abrirSelectorFecha()
+- void setCampo(View,int,String,String)
+- void descargarPdf(String)
+}
+
+
+class com.pfc.trasladocuentas.ui.NuevaSolicitudActivity {
+- BottomNavigationView bottomNav
+- MaterialToolbar toolbar
+- Fragment paso1
+- Fragment paso2
+- Fragment paso3
+- Fragment paso4
+- Fragment fragmentActual
+# void onCreate(Bundle)
++ void cambiarAPaso(int)
+- void cargarFragment(Fragment)
++ void enviarSolicitudFinal()
+- void lanzarPeticionServidor(JSONObject)
+}
+
+
+
+
+androidx.fragment.app.Fragment <|-- com.pfc.trasladocuentas.ui.Paso3Fragment
+androidx.appcompat.app.AppCompatActivity <|-- com.pfc.trasladocuentas.ui.LoginActivity
+androidx.fragment.app.Fragment <|-- com.pfc.trasladocuentas.ui.Paso1Fragment
+androidx.fragment.app.Fragment <|-- com.pfc.trasladocuentas.ui.Paso2Fragment
+androidx.appcompat.app.AppCompatActivity <|-- com.pfc.trasladocuentas.ui.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.pfc.trasladocuentas.ui.DashboardActivity
+androidx.fragment.app.Fragment <|-- com.pfc.trasladocuentas.ui.Paso4Fragment
+androidx.appcompat.app.AppCompatActivity <|-- com.pfc.trasladocuentas.ui.RegistroActivity
+com.google.android.material.bottomsheet.BottomSheetDialogFragment <|-- com.pfc.trasladocuentas.ui.DesplegableDetalle
+androidx.appcompat.app.AppCompatActivity <|-- com.pfc.trasladocuentas.ui.NuevaSolicitudActivity
+@enduml
